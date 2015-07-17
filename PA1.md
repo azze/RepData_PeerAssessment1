@@ -45,6 +45,16 @@ plot(intervalmean$interval,intervalmean$steps,type="l",xlab="interval",ylab="ste
 ```
 
 ![](PA1_files/figure-html/unnamed-chunk-3-1.png) 
+  
+The interval with the maximum average of steps is given here
+
+```r
+intervalmean$interval[which.max(intervalmean$steps)]
+```
+
+```
+## [1] 835
+```
 
 ## Imputing missing values
 First we find the total number of NA vlaues in our data
@@ -71,7 +81,7 @@ mydata2<-aggregate(list(steps=mydata2$steps),list(date=mydata2$date),sum)
 hist(mydata2$steps,col="green",xlab="steps",main="Total number of steps")
 ```
 
-![](PA1_files/figure-html/unnamed-chunk-5-1.png) 
+![](PA1_files/figure-html/unnamed-chunk-6-1.png) 
 
 ```r
 mean(mydata2$steps)
@@ -121,7 +131,7 @@ plot(mydataweek$interval,mydataweek$steps,type='l',xlab="interval",ylab="steps")
 plot(mydatawend$interval,mydatawend$steps,type='l',xlab="interval",ylab="steps")
 ```
 
-![](PA1_files/figure-html/unnamed-chunk-6-1.png) 
+![](PA1_files/figure-html/unnamed-chunk-7-1.png) 
   
   
 As we can see there is more activity on weekends than on weekdays

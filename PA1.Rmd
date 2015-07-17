@@ -29,6 +29,11 @@ median(dailytotal$steps,na.rm=TRUE)
 intervalmean<-aggregate(list(steps=mydata$steps),list(interval=mydata$interval),mean,na.rm=TRUE)
 plot(intervalmean$interval,intervalmean$steps,type="l",xlab="interval",ylab="steps",main="Daily Activity Pattern")
 ```
+  
+The interval with the maximum average of steps is given here
+```{r}
+intervalmean$interval[which.max(intervalmean$steps)]
+```
 
 ## Imputing missing values
 First we find the total number of NA vlaues in our data
